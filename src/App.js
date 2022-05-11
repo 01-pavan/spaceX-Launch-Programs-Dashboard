@@ -12,6 +12,11 @@ function App() {
             <Sidebar />
             <Dashboard />
           </div>
+          <div className="footer">
+            <h2>
+              Developed with ❤️ by <span>Pavan Kumar</span>
+            </h2>
+          </div>
         </div>
       </GlobalProvider>
     </>
