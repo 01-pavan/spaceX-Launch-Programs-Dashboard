@@ -21,7 +21,25 @@ const Sidebar = () => {
   });
 
   useEffect(() => {
+    //modify url
+
+    const modifyUrl = () => {
+      const url = `https://api.spacexdata.com/v3/launches?limit=100${
+        filters.year ? "&launch_year=" + filters.year : ""
+      }${
+        filters.launch_success
+          ? "&launch_success=" + filters.launch_success.toLowerCase()
+          : ""
+      }${
+        filters.land_success
+          ? "&land_success=" + filters.land_success.toLowerCase()
+          : ""
+      }`;
+      console.log("url from" + url);
+      updateUrl(url);
+    };
     modifyUrl();
+    //eslint-disable-next-line
   }, [filters]);
 
   const handleClick = (e, index) => {
@@ -98,23 +116,6 @@ const Sidebar = () => {
     });
   };
 
-  //modify url
-
-  const modifyUrl = () => {
-    const url = `https://api.spacexdata.com/v3/launches?limit=100${
-      filters.year ? "&launch_year=" + filters.year : ""
-    }${
-      filters.launch_success
-        ? "&launch_success=" + filters.launch_success.toLowerCase()
-        : ""
-    }${
-      filters.land_success
-        ? "&land_success=" + filters.land_success.toLowerCase()
-        : ""
-    }`;
-    console.log("url from" + url);
-    updateUrl(url);
-  };
   console.log(filters);
 
   return (
