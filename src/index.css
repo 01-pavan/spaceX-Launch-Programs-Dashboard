@@ -188,11 +188,15 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.footer h2 {
-  font-size: 2rem;
+.footer {
   padding: 2rem;
 }
-.footer h2 span {
+
+.footer h2,
+span {
+  font-size: 2rem;
+}
+.footer span {
   color: #00308f;
   text-decoration: underline;
   cursor: pointer;
@@ -213,7 +217,14 @@ h3 {
     align-items: center;
     justify-content: center;
   }
-  .footer h2 {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .footer h2,
+  span {
     font-size: 1.5rem;
   }
 }
