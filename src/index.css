@@ -168,8 +168,8 @@ h3 {
   font-weight: 800;
   color: #00308f;
 }
-.card .inner-card .card-info span {
-  font-size: 1.2rem;
+.card .inner-card .card-info h2 span {
+  font-size: 1.5rem;
   font-weight: 800;
   color: #00308f;
 }
