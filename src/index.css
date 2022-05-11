@@ -164,6 +164,14 @@ h3 {
 .card .inner-card .card-info ul li {
   text-align: center;
   display: inline;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #00308f;
+}
+.card .inner-card .card-info span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #00308f;
 }
 .card-info span {
   color: #00308f;
@@ -193,7 +201,7 @@ h3 {
 }
 
 .footer h2,
-span {
+.footer span {
   font-size: 2rem;
 }
 .footer span {
@@ -211,6 +219,7 @@ span {
     justify-content: center;
     flex-direction: column;
   }
+
   .dashboard {
     width: 30rem;
     display: flex;

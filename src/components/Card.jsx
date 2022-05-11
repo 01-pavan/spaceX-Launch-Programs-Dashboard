@@ -28,12 +28,15 @@ const Card = ({ data }) => {
             launch Year: <span>{data.launch_year}</span>
           </h3>
           <h3>
-            Successful Launch: <span>{data.launch_success?.toString()}</span>{" "}
+            Successful Launch:{" "}
+            <span>{data.launch_success?.toString().toUpperCase()}</span>{" "}
           </h3>
           <h3>
             Successful Landing:{" "}
             <span>
-              {land_success !== null ? land_success.toString() : "NA"}
+              {land_success !== null
+                ? land_success.toString().toUpperCase()
+                : "NA"}
             </span>{" "}
           </h3>
         </div>

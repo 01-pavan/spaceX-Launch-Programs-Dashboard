@@ -13,7 +13,7 @@ function App() {
             <Dashboard />
           </div>
           <div className="footer">
-            <h2>Developed with ❤️ by</h2>
+            <h2>Developed with ❤️ by &nbsp;</h2>
             <span>Pavan Kumar</span>
           </div>
         </div>
