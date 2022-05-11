@@ -1,13 +1,239 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  min-width: 300px;
+  min-height: 100vh;
+  background-color: rgb(238, 238, 238);
+}
+.app h1 {
+  padding: 1rem 0 0 2rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.container {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  /* flex-wrap: wrap; */
+}
+
+.sidebar {
+  /* position: fixed; */
+  min-width: 25rem;
+  max-width: 25rem;
+  max-height: 62rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.sidebar h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.launch-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.launch-year h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  padding: 0 4rem;
+  border-bottom: 0.2rem solid grey;
+}
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 5rem;
+  padding: 2rem;
+}
+.years button {
+  font-size: 1.75rem;
+  background-color: #b6e388;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+.years .active {
+  background-color: #138808;
+}
+
+.years button:hover {
+  background-color: #138808;
+}
+.sidebar .success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .success h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  padding: 0 1rem;
+  border-bottom: 2px solid grey;
+}
+.sidebar .success .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 5rem;
+  padding: 2rem;
+}
+.sidebar .success .buttons button {
+  font-size: 1.75rem;
+  background-color: #b6e388;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+.sidebar .success .buttons button:hover {
+  background-color: #138808;
+}
+.sidebar .success .buttons .btn1 {
+  background-color: #138808;
+}
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  /* background-color: blue; */
+  max-width: 112rem;
+}
+
+.card {
+  /* flex: 1 1 25rem; */
+  height: 32rem;
+  width: 26rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.card .inner-card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.card .inner-card img {
+  object-fit: contain;
+  width: 100%;
+  height: 16rem;
+  background-color: rgb(238, 238, 238);
+}
+.card .inner-card .card-info {
+  width: 100%;
+}
+.card .inner-card .card-info h2 {
+  padding: 0.2rem 0;
+}
+.card .inner-card .card-info h3 {
+  padding: 0.25rem 0;
+}
+.card .inner-card .card-info h2,
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.card .inner-card .card-info h2 {
+  color: #00308f;
+}
+.card .inner-card .card-info ul li {
+  text-align: center;
+  display: inline;
+}
+.card-info span {
+  color: #00308f;
+}
+
+/* @media only screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+} */
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 80%;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .dashboard {
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+  html {
+    font-size: 54%;
+  }
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
