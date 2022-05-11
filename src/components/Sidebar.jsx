@@ -31,7 +31,7 @@ const Sidebar = () => {
     // updateUrl();
 
     setFilters((prevState) => {
-      if (prevState.year == e.target.innerText) {
+      if (prevState.year === e.target.innerText) {
         return {
           ...prevState,
           year: null,
@@ -44,7 +44,7 @@ const Sidebar = () => {
     });
 
     setIndexVal((prev) => {
-      if (prev == index) {
+      if (prev === index) {
         return null;
       } else {
         return index;
@@ -54,7 +54,7 @@ const Sidebar = () => {
   const handleClick2 = (e, index) => {
     console.log(e.target.innerText);
     setFilters((prevState) => {
-      if (prevState.launch_success == e.target.innerText) {
+      if (prevState.launch_success === e.target.innerText) {
         return {
           ...prevState,
           launch_success: null,
@@ -68,7 +68,7 @@ const Sidebar = () => {
 
     // modifyUrl(e.target.innerText);
     setIndexVal2((prev) => {
-      if (prev == index) {
+      if (prev === index) {
         return null;
       } else {
         return index;
@@ -78,7 +78,7 @@ const Sidebar = () => {
   const handleClick3 = (e, index) => {
     console.log(e.target.innerText);
     setFilters((prevState) => {
-      if (prevState.land_success == e.target.innerText) {
+      if (prevState.land_success === e.target.innerText) {
         return {
           ...prevState,
           land_success: null,
@@ -90,7 +90,7 @@ const Sidebar = () => {
       };
     });
     setIndexVal3((prev) => {
-      if (prev == index) {
+      if (prev === index) {
         return null;
       } else {
         return index;
@@ -126,7 +126,7 @@ const Sidebar = () => {
           {years.map((year, index) => (
             <button
               key={index}
-              className={`${index == indexVal && "active"}`}
+              className={`${index === indexVal && "active"}`}
               onClick={(e) => handleClick(e, index)}
             >
               {year}
@@ -140,7 +140,7 @@ const Sidebar = () => {
           {successBtns.map((btn, index) => (
             <button
               key={index}
-              className={`btn1${index == indexVal2 && " active"}`}
+              className={`btn1${index === indexVal2 && " active"}`}
               onClick={(e) => handleClick2(e, index)}
             >
               {btn}
@@ -154,7 +154,7 @@ const Sidebar = () => {
           {successBtns.map((btn, index) => (
             <button
               key={index}
-              className={`btn1${index == indexVal3 && " active"}`}
+              className={`btn1${index === indexVal3 && " active"}`}
               onClick={(e) => handleClick3(e, index)}
             >
               {btn}
