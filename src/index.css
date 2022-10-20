@@ -32,7 +32,7 @@ html {
   /* position: fixed; */
   min-width: 25rem;
   max-width: 25rem;
-  max-height: 62rem;
+  /* min-height: 62rem; */
   display: flex;
   flex-direction: column;
   background-color: white;
