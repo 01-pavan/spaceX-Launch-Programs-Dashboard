@@ -1,4 +1,4 @@
-# SpaceX Launch Programs Dashboard🚀🚀🚀
+# SpaceX Launch Programs Dashboard🚀🚀
 
 ## Description✉️
 
