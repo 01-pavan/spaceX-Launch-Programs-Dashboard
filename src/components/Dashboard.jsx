@@ -3,6 +3,7 @@ import Card from "./Card";
 import Spinner from "./Spinner";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import ReactGA from "react-ga";
 
 const Dashboard = () => {
   const { url } = useContext(GlobalContext);
@@ -10,6 +11,11 @@ const Dashboard = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  //google analytics
+
+  useEffect(() => {
+    ReactGA.initialize("G-TBEMHLTV59");
+  }, []);
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -23,6 +29,15 @@ const Dashboard = () => {
     dataFetch();
   }, [url]);
   console.log(data);
+
+  const handleClick = () => {
+    ReactGA.event({
+      category: "Button",
+      action: "Click",
+      label: "Contact Us",
+    });
+  };
+
   if (loading) {
     return <Spinner />;
   }
@@ -32,7 +47,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       {data.map((item, index) => (
-        <Card key={index} data={item} />
+        <Card key={index} data={item} onClick={handleClick} />
       ))}
     </div>
   );
