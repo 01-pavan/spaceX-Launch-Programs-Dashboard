@@ -46,8 +46,9 @@ const Dashboard = () => {
   }
   return (
     <div className="dashboard">
+      <button onClick={handleClick}>test</button>
       {data.map((item, index) => (
-        <Card key={index} data={item} onClick={handleClick} />
+        <Card key={index} data={item} />
       ))}
     </div>
   );
