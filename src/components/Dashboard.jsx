@@ -3,7 +3,7 @@ import Card from "./Card";
 import Spinner from "./Spinner";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 const Dashboard = () => {
   const { url } = useContext(GlobalContext);
