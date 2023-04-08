@@ -14,7 +14,7 @@ const Dashboard = () => {
   //google analytics
 
   useEffect(() => {
-    ReactGA.initialize("G-TBEMHLTV59");
+    ReactGA.initialize("G-QH1W3T76HN");
   }, []);
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const Dashboard = () => {
     };
     dataFetch();
   }, [url]);
-  console.log(data);
 
   const handleClick = () => {
+    console.log("clicked");
     ReactGA.event({
       category: "Button",
       action: "Click",
